@@ -36,9 +36,9 @@ class BatchJob extends DatabaseJob
      */
     public function release($delay = 0)
     {
-        if ($delay != 0) {
-            throw new UnsupportedException('The BatchJob does not support releasing back onto the queue with a delay');
-        }
+//        if ($delay != 0) {
+//            throw new UnsupportedException('The BatchJob does not support releasing back onto the queue with a delay');
+//        }
 
         $this->released = true;
 
