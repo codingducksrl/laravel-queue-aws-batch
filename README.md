@@ -90,11 +90,11 @@ AWS Batch has no method to delay a job and as it's our runner, we don't have an 
 jobs for your use case, at this point my recommendation would be to use a regular DB queue, and to fire a job into it
 which will fire your batch job at the correct time.
 
-[ico-version]: https://img.shields.io/packagist/v/lukewaite/laravel-queue-aws-batch.svg?style=flat-square
+[ico-version]: https://img.shields.io/packagist/v/codingducksrl/laravel-queue-aws-batch.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-github]: https://img.shields.io/github/workflow/status/lukewaite/laravel-queue-aws-batch/Tests/main.svg?style=flat-square
-[ico-coverage]: https://img.shields.io/scrutinizer/coverage/g/lukewaite/laravel-queue-aws-batch/main.svg?style=flat-square
+[ico-github]: https://img.shields.io/github/workflow/status/codingducksrl/laravel-queue-aws-batch/Tests/main.svg?style=flat-square
+[ico-coverage]: https://img.shields.io/scrutinizer/coverage/g/codingducksrl/laravel-queue-aws-batch/main.svg?style=flat-square
 
-[link-packagist]: https://packagist.org/packages/lukewaite/laravel-queue-aws-batch
-[link-github]: https://github.com/lukewaite/laravel-queue-aws-batch/actions/workflows/tests.yml?query=branch%3Amain++
-[link-coverage]: https://scrutinizer-ci.com/g/lukewaite/laravel-queue-aws-batch/?branch=main
+[link-packagist]: https://packagist.org/packages/codingducksrl/laravel-queue-aws-batch
+[link-github]: https://github.com/codingducksrl/laravel-queue-aws-batch/actions/workflows/tests.yml?query=branch%3Amain++
+[link-coverage]: https://scrutinizer-ci.com/g/codingducksrl/laravel-queue-aws-batch/?branch=main
