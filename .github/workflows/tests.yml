@@ -1,72 +1,97 @@
 name: Tests
 
 on:
-  push:
-    branches:
-      - main
-      - '*.x'
-  pull_request:
+    push:
+        branches:
+            - main
+            - '*.x'
+    pull_request:
 
 permissions:
-  contents: read
+    contents: read
 
 jobs:
-  tests:
-    runs-on: ubuntu-latest
+    tests:
+        runs-on: ubuntu-latest
 
-    strategy:
-      fail-fast: false
-      matrix:
-        laravel:
-          - version: ^8
-            php: [ '7.3', '7.4', '8.0', '8.1', '8.2' ]
-            dependency-version: [prefer-stable]
-          - version: ^9
-            php: [ '7.4', '8.0', '8.1', '8.2' ]
-            dependency-version: [prefer-stable]
-          - version: ^10
-            php: [ '8.1', '8.2' ]
-            dependency-version: [prefer-stable]
-          - version: ^11
-            php: [ '8.2', '8.3' ]
-            dependency-version: [prefer-stable]
-#        php: [ '7.3', '7.4', '8.0', '8.1', '8.2' ]
-#        laravel: [^8, ^10, ^11]
-#        dependency-version: [prefer-stable]
+        strategy:
+            fail-fast: false
+            matrix:
+                laravel:
+                    -   version: ^8
+                        php: '7.3'
+                        dependency-version: prefer-stable
+                    -   version: ^8
+                        php: '7.4'
+                        dependency-version: prefer-stable
+                    -   version: ^8
+                        php: '8.0'
+                        dependency-version: prefer-stable
+                    -   version: ^8
+                        php: '8.1'
+                        dependency-version: prefer-stable
+                    -   version: ^8
+                        php: '8.2'
+                        dependency-version: prefer-stable
+
+                    -   version: ^9
+                        php: '7.4'
+                        dependency-version: prefer-stable
+                    -   version: ^9
+                        php: '8.0'
+                        dependency-version: prefer-stable
+                    -   version: ^9
+                        php: '8.1'
+                        dependency-version: prefer-stable
+                    -   version: ^9
+                        php: '8.2'
+                        dependency-version: prefer-stable
+                    -   version: ^10
+                        php: '8.1'
+                        dependency-version: prefer-stable
+                    -   version: ^10
+                        php: '8.2'
+                        dependency-version: prefer-stable
+                    -   version: ^11
+                        php: '8.2'
+                        dependency-version: prefer-stable
+                    -   version: ^11
+                        php: '8.3'
+                        dependency-version: prefer-stable
 
 
-    name: PHP ${{ matrix.laravel.php }} - Laravel ${{ matrix.laravel.version }} - ${{ matrix.laravel.dependency-version }}
+        name: PHP ${{ matrix.laravel.php }} - Laravel ${{ matrix.laravel.version }} - ${{ matrix.laravel.dependency-version }}
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 10
+        steps:
+            -   name: Checkout code
+                uses: actions/checkout@v3
+                with:
+                    fetch-depth: 10
 
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: ${{ matrix.laravel.php }}
-          coverage: xdebug
+            -   name: Setup PHP
+                uses: shivammathur/setup-php@v2
+                with:
+                    php-version: ${{ matrix.laravel.php }}
+                    coverage: xdebug
 
-      - name: Install dependencies
-        run: |
-          composer require "laravel/framework:${{ matrix.laravel.version }}" --no-interaction --no-update
-          composer update --${{ matrix.laravel.dependency-version }} --prefer-dist --no-progress
+            -   name: Install dependencies
+                run: |
+                    composer require "laravel/framework:${{ matrix.laravel.version }}" --no-interaction --no-update
+                    composer update --${{ matrix.laravel.dependency-version }} --prefer-dist --no-progress
 
-      - name: Execute tests
-        run: vendor/bin/phpunit
+            -   name: Execute tests
+                run: vendor/bin/phpunit
 
-      - name: PHPStan Static Analysis
-        uses: php-actions/phpstan@v3
-        with:
-          path: src/
+            -   name: PHPStan Static Analysis
+                uses: php-actions/phpstan@v3
+                with:
+                    path: src/
 
-  phpcs:
-    name: phpcs
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: php-actions/composer@v6
-      - name: Check PSR-12 Codestyle
-        run: composer check-style
+    phpcs:
+        name: phpcs
+        runs-on: ubuntu-latest
+        steps:
+            -   uses: actions/checkout@v3
+            -   uses: php-actions/composer@v6
+            -   name: Check PSR-12 Codestyle
+                run: composer check-style
