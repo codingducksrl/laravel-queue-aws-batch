@@ -20,7 +20,7 @@ See the table above for package version information, and change the version belo
 
 Using `composer`, run:
 
-    composer require codingducksrl/laravel-queue-aws-batch ~3.0
+    composer require codingducksrl/laravel-queue-aws-batch
 
 
 ### Usage
