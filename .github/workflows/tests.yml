@@ -17,9 +17,23 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        php: [ '7.3', '7.4', '8.0', '8.1', '8.2' ]
-        laravel: [^8, ^10, ^11]
-        dependency-version: [prefer-stable]
+        laravel:
+          - version: ^8
+            php: [ '7.3', '7.4', '8.0', '8.1', '8.2' ]
+            dependency-version: [prefer-stable]
+          - version: ^9
+            php: [ '7.4', '8.0', '8.1', '8.2' ]
+            dependency-version: [prefer-stable]
+          - version: ^10
+            php: [ '8.1', '8.2' ]
+            dependency-version: [prefer-stable]
+          - version: ^11
+            php: [ '8.2', '8.3' ]
+            dependency-version: [prefer-stable]
+#        php: [ '7.3', '7.4', '8.0', '8.1', '8.2' ]
+#        laravel: [^8, ^10, ^11]
+#        dependency-version: [prefer-stable]
+
 
     name: PHP ${{ matrix.php }} - Laravel ${{ matrix.laravel }} - ${{ matrix.dependency-version }}
 
