@@ -1,5 +1,5 @@
 {
-  "name": "lukewaite/laravel-queue-aws-batch",
+  "name": "codingducksrl/laravel-queue-aws-batch",
   "description": "Laravel Queue for AWS Batch, enabling users to submit jobs for processing to a Batch queue.",
   "keywords": [
     "laravel",
