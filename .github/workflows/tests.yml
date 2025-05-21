@@ -33,10 +33,6 @@ jobs:
                     -   version: ^8
                         php: '8.2'
                         dependency-version: prefer-stable
-
-                    -   version: ^9
-                        php: '7.4'
-                        dependency-version: prefer-stable
                     -   version: ^9
                         php: '8.0'
                         dependency-version: prefer-stable
