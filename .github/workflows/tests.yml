@@ -48,13 +48,6 @@ jobs:
                     -   version: ^10
                         php: '8.2'
                         dependency-version: prefer-stable
-                    -   version: ^11
-                        php: '8.2'
-                        dependency-version: prefer-stable
-                    -   version: ^11
-                        php: '8.3'
-                        dependency-version: prefer-stable
-
 
         name: PHP ${{ matrix.laravel.php }} - Laravel ${{ matrix.laravel.version }} - ${{ matrix.laravel.dependency-version }}
 

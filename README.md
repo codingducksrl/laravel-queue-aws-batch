@@ -7,11 +7,13 @@
 ### Supported Versions
 | Laravel Version | Package Tag | Supported |
 |-----------------|-------------|-----------|
-| 8.x   | unreleased  | yes       |
-| 5.4.x | 2.0.x       | no        |
-| 5.3.x | 1.0.x       | no        |
-| 5.2.x | 1.0.x       | no        |
-| 5.1.x | 1.0.x       | no        |
+| 10.x            | >3.0.1      | yes       |
+| 9.x             | >3.0.1      | yes       |
+| 8.x             | >3.0.1      | yes       |
+| 5.4.x           | 2.0.x       | no        |
+| 5.3.x           | 1.0.x       | no        |
+| 5.2.x           | 1.0.x       | no        |
+| 5.1.x           | 1.0.x       | no        |
 
 ### Installation
 See the table above for package version information, and change the version below accordingly.
