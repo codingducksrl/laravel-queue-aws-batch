@@ -35,7 +35,7 @@ jobs:
 #        dependency-version: [prefer-stable]
 
 
-    name: PHP ${{ matrix.php }} - Laravel ${{ matrix.laravel }} - ${{ matrix.dependency-version }}
+    name: PHP ${{ matrix.laravel.php }} - Laravel ${{ matrix.laravel.version }} - ${{ matrix.laravel.dependency-version }}
 
     steps:
       - name: Checkout code
@@ -46,13 +46,13 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: ${{ matrix.php }}
+          php-version: ${{ matrix.laravel.php }}
           coverage: xdebug
 
       - name: Install dependencies
         run: |
-          composer require "laravel/framework:${{ matrix.laravel }}" --no-interaction --no-update
-          composer update --${{ matrix.dependency-version }} --prefer-dist --no-progress
+          composer require "laravel/framework:${{ matrix.laravel.version }}" --no-interaction --no-update
+          composer update --${{ matrix.laravel.dependency-version }} --prefer-dist --no-progress
 
       - name: Execute tests
         run: vendor/bin/phpunit
