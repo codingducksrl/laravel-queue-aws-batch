@@ -3,7 +3,6 @@
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
 [![Build Status][ico-github]][link-github]
-[![Code Coverage][ico-coverage]][link-coverage]
 
 ### Supported Versions
 | Laravel Version | Package Tag | Supported |
@@ -93,8 +92,6 @@ which will fire your batch job at the correct time.
 [ico-version]: https://img.shields.io/packagist/v/codingducksrl/laravel-queue-aws-batch.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
 [ico-github]: https://img.shields.io/github/workflow/status/codingducksrl/laravel-queue-aws-batch/Tests/main.svg?style=flat-square
-[ico-coverage]: https://img.shields.io/scrutinizer/coverage/g/codingducksrl/laravel-queue-aws-batch/main.svg?style=flat-square
 
 [link-packagist]: https://packagist.org/packages/codingducksrl/laravel-queue-aws-batch
 [link-github]: https://github.com/codingducksrl/laravel-queue-aws-batch/actions/workflows/tests.yml?query=branch%3Amain++
-[link-coverage]: https://scrutinizer-ci.com/g/codingducksrl/laravel-queue-aws-batch/?branch=main
