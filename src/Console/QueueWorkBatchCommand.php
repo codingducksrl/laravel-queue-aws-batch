@@ -48,7 +48,7 @@ class QueueWorkBatchCommand extends WorkCommand
         $this->exceptions = $exceptions;
     }
 
-    public function fire()
+    public function handle()
     {
         $this->listenForEvents();
 
