@@ -7,6 +7,8 @@
 ### Supported Versions
 | Laravel Version | Package Tag | Supported |
 |-----------------|-------------|-----------|
+| 12.x            | >=4.0.0     | yes       |
+| 11.x            | >=4.0.0     | yes       |
 | 10.x            | >3.0.1      | yes       |
 | 9.x             | >3.0.1      | yes       |
 | 8.x             | >3.0.1      | yes       |
