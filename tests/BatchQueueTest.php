@@ -11,7 +11,7 @@ class BatchQueueTest extends TestCase
 {
     public function setUp() : void
     {
-        $this->queue = $this->getMockBuilder('LukeWaite\LaravelQueueAwsBatch\Queues\BatchQueue')->setMethods(null)->setConstructorArgs([
+        $this->queue = $this->getMockBuilder('LukeWaite\LaravelQueueAwsBatch\Queues\BatchQueue')->setConstructorArgs([
             $this->database = m::mock('Illuminate\Database\Connection'),
             'table',
             'default',
