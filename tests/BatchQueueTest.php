@@ -9,6 +9,10 @@ use Mockery\Adapter\Phpunit\MockeryTestCase as TestCase;
 
 class BatchQueueTest extends TestCase
 {
+    private $database;
+    private $queue;
+    private $batch;
+
     public function setUp() : void
     {
         $this->queue = $this->getMockBuilder('LukeWaite\LaravelQueueAwsBatch\Queues\BatchQueue')->onlyMethods([])->setConstructorArgs([

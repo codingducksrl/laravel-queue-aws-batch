@@ -8,6 +8,10 @@ use Mockery\Adapter\Phpunit\MockeryTestCase as TestCase;
 
 class BatchJobTest extends TestCase
 {
+    private $batchQueue;
+    private $batchJob;
+    private $job;
+
     public function setUp() : void
     {
         $this->job = new \stdClass();
