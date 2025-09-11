@@ -58,6 +58,8 @@ class QueueWorkBatchCommand extends WorkCommand
             $this->exceptions->report($e);
             throw $e;
         }
+
+        return 0;
     }
 
     // TOOD: Refactor out the logic here into an extension of the Worker class
