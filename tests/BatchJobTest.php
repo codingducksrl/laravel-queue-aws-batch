@@ -17,7 +17,7 @@ class BatchJobTest extends TestCase
         $this->job->attempts = 1;
 
         /** @var \LukeWaite\LaravelQueueAwsBatch\Jobs\BatchJob $batchJob */
-        $this->batchJob = $this->getMockBuilder('LukeWaite\LaravelQueueAwsBatch\Jobs\BatchJob')->setConstructorArgs([
+        $this->batchJob = $this->getMockBuilder('LukeWaite\LaravelQueueAwsBatch\Jobs\BatchJob')->onlyMethods([])->setConstructorArgs([
             m::mock('Illuminate\Container\Container'),
             $this->batchQueue = m::mock('LukeWaite\LaravelQueueAwsBatch\Queues\BatchQueue'),
             $this->job,
